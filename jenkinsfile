@@ -16,17 +16,18 @@ agent any
 		sh 'mvn test'
 			}
 			}
-	stage ('deploy'){
-		steps {
-			sh 'echo "Deployment will be added later"'
-			}
-			}
 	stage ('archiveArtifact') {
 		steps{
 		archiveArtifacts artifacts: 'target/project123-1.0.war',
 		fingerprint: true
 		}
 		}
-
+	stage ('deploy') {
+		steps {
+		sh '''
+		sudo cp target/project123-1.0.war /var/lib/tomcat/webapps/
+		'''
+		}
+			}
 		}
 }
