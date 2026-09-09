@@ -21,5 +21,12 @@ agent any
 			sh 'echo "Deployment will be added later"'
 			}
 			}
+	stage ('archiveArtifact') {
+		steps{
+		archiveArtifacts artifacts: 'target/project123-1.0.jar',
+		fingerprint: true
+		}
+		}
+
 		}
 }
