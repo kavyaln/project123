@@ -23,7 +23,7 @@ agent any
 			}
 	stage ('archiveArtifact') {
 		steps{
-		archiveArtifacts artifacts: 'target/project123-1.0.jar',
+		archiveArtifacts artifacts: 'target/project123-1.0.war',
 		fingerprint: true
 		}
 		}

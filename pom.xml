@@ -9,9 +9,22 @@
     <artifactId>project123</artifactId>
     <version>1.0</version>
 
+    <packaging>war</packaging>
+
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
     </properties>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>jakarta.servlet</groupId>
+            <artifactId>jakarta.servlet-api</artifactId>
+            <version>6.1.0</version>
+            <scope>provided</scope>
+        </dependency>
+
+    </dependencies>
 
 </project>
