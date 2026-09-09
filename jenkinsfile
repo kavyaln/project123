@@ -1,0 +1,25 @@
+pipeline {
+agent any 
+	stages{ 
+	stage ('clone'){
+		steps {
+		git branch: 'main', url: 'https://github.com/kavyaln/project123.git'
+			}
+			}
+	stage ('Build') {
+		steps {
+		sh 'mvn clean install'
+		}
+			}
+	stage ('test'){
+		steps {
+		sh 'mvn test'
+			}
+			}
+	stage ('deploy'){
+		steps {
+			sh 'echo "Deployment will be added later"'
+			}
+			}
+		}
+}
