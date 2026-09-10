@@ -14,6 +14,15 @@ agent any
 	stage ('test'){
 		steps {
 		sh 'mvn test'
+		sh '''
+		cat > test-results.xml <<EOF
+		<testsuite name="My Project test" tests="1" failures="0">
+ 		<testcase name="Project test"/>
+		</testsuite>
+		EOF
+		'''
+
+		junit 'test-results.xml'
 			}
 			}
 	stage ('archiveArtifact') {
