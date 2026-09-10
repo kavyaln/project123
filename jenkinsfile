@@ -16,6 +16,7 @@ agent any
 		sh 'mvn test'
 		sh '''
 		junit 'target/surfire-reports/*.xml'
+			'''
 			}
 			}
 	stage ('archiveArtifact') {
