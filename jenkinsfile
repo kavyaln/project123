@@ -30,4 +30,12 @@ agent any
 		}
 			}
 		}
+	post {
+		success {
+		echo "Pipeline completed successfully
+		}
+		failure {
+		echo "pipeline failed"
+			}
+		}
 }
