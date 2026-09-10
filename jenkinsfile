@@ -25,6 +25,7 @@ agent any
 		fingerprint: true
 		}
 		}
+
 	stage ('deploy') {
 		steps {
 		sh '''
